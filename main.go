@@ -45,7 +45,7 @@ func main() {
 		}
 		attempts++
 		chances--
-		if userInputNumber < 0 || userInputNumber > 100 {
+		if userInputNumber < 1 || userInputNumber > 100 {
 			fmt.Println("Invalid choice, Enter a number between 1 and 100")
 			continue
 		}
