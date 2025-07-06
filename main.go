@@ -9,17 +9,17 @@ import (
 func main() {
 	helper.PrintGreetingMessage()
 	helper.PrintDifficultyLevel()
-	var userInputString string
+	var userInput string
 	var selectedLevel int
 
 	for {
 		fmt.Printf("Enter your choice: ")
-		_, err := fmt.Scanln(&userInputString)
+		_, err := fmt.Scanln(&userInput)
 		if err != nil {
 			fmt.Println("Error reading input, Try again")
 			continue
 		}
-		selectedLevel, err = helper.DifficultyLevelValidation(userInputString)
+		selectedLevel, err = helper.DifficultyLevelValidation(userInput)
 		if err != nil {
 			fmt.Println("Invalid choice, Try again")
 			continue
@@ -33,12 +33,12 @@ func main() {
 	for {
 		fmt.Println()
 		fmt.Printf("Enter your guess: ")
-		_, err := fmt.Scanln(&userInputString)
+		_, err := fmt.Scanln(&userInput)
 		if err != nil {
 			fmt.Println("Error reading input, Try again")
 			continue
 		}
-		userInputNumber, err := strconv.Atoi(userInputString)
+		guessedNumber, err := strconv.Atoi(userInput)
 		if err != nil {
 			fmt.Println("Error reading input, Try again")
 			continue
@@ -46,18 +46,19 @@ func main() {
 		attempts++
 		chances--
 		if userInputNumber < 1 || userInputNumber > 100 {
+		if guessedNumber < 1 || guessedNumber > 100 {
 			fmt.Println("Invalid choice, Enter a number between 1 and 100")
 			continue
 		}
-		if userInputNumber == randomNumber {
+		if guessedNumber == randomNumber {
 			fmt.Printf("Congratulations! You guessed the correct number in %d attempts\n", attempts)
 			break
 		}
 		if chances > 0 {
-			if randomNumber < userInputNumber {
-				fmt.Printf("Incorrect! The number is less than %d\n", userInputNumber)
+			if randomNumber < guessedNumber {
+				fmt.Printf("Incorrect! The number is less than %d\n", guessedNumber)
 			} else {
-				fmt.Printf("Incorrect! The number is greater than %d\n", userInputNumber)
+				fmt.Printf("Incorrect! The number is greater than %d\n", guessedNumber)
 			}
 			continue
 		} else {
