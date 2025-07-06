@@ -20,7 +20,7 @@ func DifficultyLevelValidation(userInput string) (int, error) {
 
 }
 
-func GetInputsForLevel(level int) int {
+func GetChancesForLevel(level int) int {
 	switch level {
 	case easyLevel:
 		return easyLevelChances

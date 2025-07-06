@@ -29,7 +29,7 @@ func main() {
 	helper.PrintGameStartMessage(selectedLevel)
 	randomNumber := helper.RandomNumberGenerator()
 	attempts := 0
-	chances := helper.GetInputsForLevel(selectedLevel)
+	chances := helper.GetChancesForLevel(selectedLevel)
 	for {
 		fmt.Println()
 		fmt.Printf("Enter your guess: ")
