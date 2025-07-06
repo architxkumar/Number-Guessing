@@ -11,9 +11,9 @@ func PrintGreetingMessage() {
 
 func PrintDifficultyLevel() {
 	fmt.Println("Please select the difficulty level.")
-	fmt.Println("1. Easy (10 chances)")
-	fmt.Println("2. Medium (5 chances)")
-	fmt.Println("3. Hard (3 chances)")
+	fmt.Printf("1. Easy (%d)\n", easyLevelChances)
+	fmt.Printf("2. Medium (%d)\n", mediumLevelChances)
+	fmt.Printf("3. Hard (%d)\n", hardLevelChances)
 	fmt.Println()
 }
 
