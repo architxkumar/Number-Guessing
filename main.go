@@ -54,11 +54,10 @@ func main() {
 			break
 		}
 		if chances > 0 {
-
 			if randomNumber < userInputNumber {
 				fmt.Printf("Incorrect! The number is less than %d\n", userInputNumber)
 			} else {
-				fmt.Printf("Incorrect! The number is greter than %d\n", userInputNumber)
+				fmt.Printf("Incorrect! The number is greater than %d\n", userInputNumber)
 			}
 			continue
 		} else {
