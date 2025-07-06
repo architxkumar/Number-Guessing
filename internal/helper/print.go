@@ -5,7 +5,7 @@ import "fmt"
 func PrintGreetingMessage() {
 	fmt.Println("Welcome to Number Guessing Game!")
 	fmt.Println("I'm thinking of a number between 1 and 100.")
-	fmt.Println("You have 5 chances to guess the correct number.")
+	fmt.Println("You have limited number of chances to guess the correct number depending upon the difficulty level.")
 	fmt.Println()
 }
 
