@@ -2,6 +2,7 @@ package helper
 
 import "fmt"
 
+// PrintGreetingMessage prints a welcome message amd basic rules.
 func PrintGreetingMessage() {
 	fmt.Println("Welcome to Number Guessing Game!")
 	fmt.Println("I'm thinking of a number between 1 and 100.")
@@ -9,6 +10,7 @@ func PrintGreetingMessage() {
 	fmt.Println()
 }
 
+// PrintDifficultyLevel prints difficulty level with available chances.
 func PrintDifficultyLevel() {
 	fmt.Println("Please select the difficulty level.")
 	fmt.Printf("1. Easy (%d)\n", easyLevelChances)
@@ -17,6 +19,7 @@ func PrintDifficultyLevel() {
 	fmt.Println()
 }
 
+// PrintGameStartMessage prints user selected level and game start greeting.
 func PrintGameStartMessage(selectedLevel int) {
 	fmt.Println()
 	switch selectedLevel {

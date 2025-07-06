@@ -43,9 +43,10 @@ func main() {
 			fmt.Println("Error reading input, Try again")
 			continue
 		}
+		// User is not penalize for system errors
 		attempts++
 		chances--
-		if userInputNumber < 1 || userInputNumber > 100 {
+		// User is penalized for entering out-of-bounds input
 		if guessedNumber < 1 || guessedNumber > 100 {
 			fmt.Println("Invalid choice, Enter a number between 1 and 100")
 			continue
