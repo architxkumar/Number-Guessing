@@ -4,6 +4,7 @@ import (
 	"Number-Guessing/internal/helper"
 	"fmt"
 	"strconv"
+	"time"
 )
 
 func main() {
@@ -31,6 +32,7 @@ func main() {
 		randomNumber := helper.RandomNumberGenerator()
 		attempts := 0
 		chances := helper.GetChancesForLevel(selectedLevel)
+		startTime := time.Now()
 		for {
 			fmt.Println()
 			fmt.Printf("Enter your guess: ")
@@ -54,6 +56,7 @@ func main() {
 			}
 			if guessedNumber == randomNumber {
 				fmt.Printf("Congratulations! You guessed the correct number in %d attempts\n", attempts)
+				fmt.Printf("You took %v time\n", time.Since(startTime).Truncate(time.Second))
 				break
 			}
 			if chances > 0 {
@@ -65,6 +68,7 @@ func main() {
 				continue
 			} else {
 				fmt.Println("Game Over! You have used all the attempts")
+				fmt.Printf("You took %v time\n", time.Since(startTime).Truncate(time.Second))
 			}
 			break
 		}
